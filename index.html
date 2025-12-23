@@ -1,0 +1,104 @@
+<html>
+<body>
+<h1>Exam JavaScipt</h1>
+<script>
+	let tDiskon1 = 0
+	let tDiskon2 = 0
+	let tDiskon3 = 0
+	let keuntungan1 = 0
+	let keuntungan2 = 0
+	let keuntungan3 = 0
+	let trans = 0
+	
+	//siang//
+	for (let i = 0; i < 2; i++) {
+		let sesi = prompt("Sesi Pagi/Siang/Malam?")
+		trans ++
+		if (sesi == "pagi") {
+			let jBaju = parseFloat(prompt("Jumlah Baju:"))
+			let jenis = prompt("Jenis Baju: kaos/kemeja/jaket/hoodie")
+			let harga = parseFloat(prompt("harga: (kaos/30000) (kemeja/50000) (jaket/75000) (hoodie/100000)" ))
+			let diskon = 0
+			if (jBaju <= 10) {
+				diskon = 0
+			} else if (jBaju > 10 && jBaju <= 20) {
+				diskon = ((10 * harga) * 0.05) + ((jBaju - 10) * harga * 0.10)
+			} else {
+				diskon = ((10 * harga) * 0.05) + ((10 * harga) * 0.12) + ((jBaju - 20) * harga * 0.22)
+			}
+			let tHarga = harga * jBaju
+			tDiskon1 = diskon
+			let tBayar = tHarga - tDiskon1
+			keuntungan1 = tBayar
+			
+			console.log("-----Transaksi Ke", trans, "-----")
+			console.log("Jenis Baju:", jenis)
+			console.log("Harga Satuan", harga)
+			console.log("Jumlah Baju Dibeli:", jBaju)
+			console.log("Sesi Pembelian:", sesi)
+			console.log("Total Harga:", tHarga)
+			console.log("Diskon:", tDiskon1)
+			console.log("Total Bayar:", tBayar)
+			console.log("Total Pendapatan:", keuntungan1)
+		} else if (sesi == "siang") {
+			let jBaju = parseFloat(prompt("Jumlah Baju:"))
+			let jenis = prompt("Jenis Baju: kaos/kemeja/jaket/hoodie")
+			let harga = parseFloat(prompt("harga: (kaos/30000) (kemeja/50000) (jaket/75000) (hoodie/100000)" ))
+			
+			let tHarga = harga * jBaju
+			tDiskon2 = 0 
+			let tBayar = tHarga - tDiskon2
+			keuntungan2 = tBayar		
+			console.log("-----Transaksi Ke", trans, "-----")
+			console.log("Jenis Baju:", jenis)
+			console.log("Harga Satuan", harga)
+			console.log("Jumlah Baju Dibeli:", jBaju)
+			console.log("Sesi Pembelian:", sesi)
+			console.log("Total Harga:", tHarga)
+			console.log("Diskon:", tDiskon2)
+			console.log("Total Bayar:", tBayar)
+			console.log("Total Pendapatan:", keuntungan2)
+		} else {
+			let jBaju = parseFloat(prompt("Jumlah Baju:"))
+			let jenis = prompt("Jenis Baju: kaos/kemeja/jaket/hoodie")
+			let harga = parseFloat(prompt("harga: (kaos/30000) (kemeja/50000) (jaket/75000) (hoodie/100000)" ))
+			let diskon = 0
+			
+			if (jBaju <= 10) {
+				diskon = jBaju * harga * 0.05
+			} else if (jBaju > 10 && jBaju < 21) {
+				diskon = ((10 * harga) * 0.10) + ((jBaju - 10)* harga * 0.18)
+			} else {
+				diskon = ((10 * harga) * 0.15) + ((10 * harga) * 0.25) + ((jBaju - 20) * harga * 0.35)
+			}
+			let tHarga = harga * jBaju
+			tDiskon3 = diskon
+			let tBayar = tHarga - tDiskon3
+			keuntungan3 = tBayar
+			
+			console.log("-----Transaksi Ke", trans, "-----")
+			console.log("Jenis Baju:", jenis)
+			console.log("Harga Satuan", harga)
+			console.log("Jumlah Baju Dibeli:", jBaju)
+			console.log("Sesi Pembelian:", sesi)
+			console.log("Total Harga:", tHarga)
+			console.log("Diskon:", tDiskon3)
+			console.log("Total Bayar:", tBayar)
+			console.log("Total Pendapatan:", keuntungan3)
+	} }
+	
+	let diskonTotal = tDiskon1 + tDiskon2 + tDiskon3
+	let tPendapatan = keuntungan1 + keuntungan2 + keuntungan3
+	let average = Math.floor(tPendapatan / trans)
+	
+	console.log("-----Rekap Akhir Penjualan-----")
+	console.log("Total Transaksi:", trans)
+	console.log("Total Diskon", diskonTotal)
+	console.log("Total Pendapatan", tPendapatan)
+	console.log("Rata-Rata Pendapatan", average)
+	//malam//
+	152535
+	
+</script>
+</body>
+</html>
